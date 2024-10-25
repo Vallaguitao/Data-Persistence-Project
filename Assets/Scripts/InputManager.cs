@@ -8,19 +8,9 @@ public class InputManager : MonoBehaviour
 {
     public static InputManager Instance;
 
-    public TMP_InputField inputField;
-
     public string storedText;
 
-    void Start()
-    {
-        inputField.onValueChanged.AddListener(UpdateText);
-    }
-
-    public void UpdateText(string text)
-    {
-        storedText = text; // Store the text
-    }
+    public int storedScore;
 
     private void Awake()
     {
@@ -35,10 +25,5 @@ public class InputManager : MonoBehaviour
             // If an instance already exists, destroy this GameObject
             Destroy(gameObject);
         }
-    }
-
-    public void StartGame()
-    {
-        SceneManager.LoadScene(1);
     }
 }
